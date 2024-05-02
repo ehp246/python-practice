@@ -5,13 +5,22 @@
     "context": "."
   },
   "features": {
+    "ghcr.io/devcontainers/features/sshd": {
+      "version": "latest"
+    },
     "ghcr.io/devcontainers/features/git": {
       "version": "latest"
-    } 
+    },
+    "ghcr.io/devcontainers/features/azure-cli": {
+      "version": "latest"
+    }
   },
   "customizations": {
     "vscode": {
-      "extensions": ["ms-python.python", "ms-python.vscode-pylance"],
+      "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance"
+      ],
       "settings": {
         "editor.formatOnSave": true,
         "python.formatting.provider": "black",
@@ -32,5 +41,9 @@
       }
     }
   },
-  "remoteUser": "vscode"
+  "remoteUser": "vscode",
+  "runArgs": [
+    "--env-file",
+    ".devcontainer/devcontainer.env"
+  ]
 }
