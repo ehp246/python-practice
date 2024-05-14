@@ -5,3 +5,5 @@ black
 azure-eventhub
 azure-identity
 aiohttp
+
+azure-functions

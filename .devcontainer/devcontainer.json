@@ -1,5 +1,5 @@
 {
-  "name": "Python 3",
+  "name": "Python Practice",
   "build": {
     "dockerfile": "Dockerfile",
     "context": "."
@@ -13,34 +13,35 @@
     },
     "ghcr.io/devcontainers/features/azure-cli": {
       "version": "latest"
+    },
+    "ghcr.io/jlaundry/devcontainer-features/azure-functions-core-tools": {
+      "version": "latest"
     }
   },
   "customizations": {
     "vscode": {
       "extensions": [
         "ms-python.python",
-        "ms-python.vscode-pylance"
+        "ms-python.vscode-pylance",
+        "ms-azuretools.vscode-azurefunctions",
+        "ms-azuretools.vscode-azureresourcegroups",
+        "ms-azuretools.vscode-docker",
+        "esbenp.prettier-vscode"
       ],
       "settings": {
         "editor.formatOnSave": true,
         "python.formatting.provider": "black",
         "python.defaultInterpreterPath": "/usr/local/bin/python",
         "python.languageServer": "Pylance",
-        "python.linting.enabled": true,
-        "python.linting.pylintEnabled": true,
-        "python.linting.pycodestyleEnabled": true,
         "python.formatting.autopep8Path": "/usr/local/bin/autopep8",
         "python.formatting.blackPath": "/usr/local/bin/black",
-        "python.formatting.yapfPath": "/usr/local/bin/yapf",
-        "python.linting.banditPath": "/usr/local/bin/bandit",
-        "python.linting.flake8Path": "/usr/local/bin/flake8",
-        "python.linting.mypyPath": "/usr/local/bin/mypy",
-        "python.linting.pycodestylePath": "/usr/local/bin/pycodestyle",
-        "python.linting.pydocstylePath": "/usr/local/bin/pydocstyle",
-        "python.linting.pylintPath": "/usr/local/bin/pylint"
+        "python.formatting.yapfPath": "/usr/local/bin/yapf"
       }
     }
   },
+  "mounts": [
+    "type=bind,source=${localEnv:USERPROFILE}/.ssh,target=/home/vscode/.ssh,readonly"
+  ],
   "remoteUser": "vscode",
   "runArgs": [
     "--env-file",
