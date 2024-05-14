@@ -161,3 +161,9 @@ cython_debug/
 .devcontainer/devcontainer.env
 
 .python_packages
+
+# Azure Functions artifacts
+bin
+obj
+appsettings.json
+local.settings.json
